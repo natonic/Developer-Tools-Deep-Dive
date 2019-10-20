@@ -1,0 +1,41 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:*"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::BUCKETNAME/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "codedeploy:GetDeploymentConfig",
+            "Resource": "arn:aws:codedeploy:REGION:ACCOUNT-NUMBER:deploymentconfig:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "codedeploy:RegisterApplicationRevision",
+            "Resource": "arn:aws:codedeploy:REGION:ACCOUNT-NUMBER:application:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "codedeploy:GetApplicationRevision",
+            "Resource": "arn:aws:codedeploy:REGION:ACCOUNT-NUMBER:application:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "codedeploy:CreateDeployment",
+            "Resource": "arn:aws:codedeploy:REGION:ACCOUNT-NUMBER:deploymentgroup:*"
+        }
+    ]
+}
